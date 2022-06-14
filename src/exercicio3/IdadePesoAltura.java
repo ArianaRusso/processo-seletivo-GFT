@@ -9,33 +9,35 @@ public class IdadePesoAltura {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
-        List<Integer> listaIdades = new ArrayList<>();
-        List<Float> listaPesos = new ArrayList<>();
-        List<Float> listaAlturas = new ArrayList<>();
-        float somaIdade = 0;
+        int idade = 0;
+        float peso = 0f;
+        float altura = 0f;
+
+        float somaIdade = 0f;
+
         int numeroPessoa = 10;
         int cont = 0;
         int cont2 = 0;
 
         for (int i = 0; i < numeroPessoa; i++) {
             System.out.println("Idade: ");
-            int idade = teclado.nextInt();
+            idade = teclado.nextInt();
             somaIdade += idade;
-            listaIdades.add(idade);
+
 
             System.out.println("Peso: ");
-            float peso = teclado.nextFloat();
-            listaPesos.add(peso);
+            peso = teclado.nextFloat();
+
 
             System.out.println("Altura: ");
-            float altura = teclado.nextFloat();
-            listaAlturas.add(altura);
+            altura = teclado.nextFloat();
+
 
             if (peso > 90 && altura < 1.50) cont++;
             if (altura > 1.90 && idade > 10 && idade < 30) cont2++;
         }
 
-        System.out.println("Media das idade: " + somaIdade / listaIdades.size());
+        System.out.println("Media das idade: " + somaIdade / numeroPessoa);
         System.out.println("Quantidade de pessoas com peso superior a 90 quilos e altura inferior\n" +
                 "a 1,50" + cont);
         System.out.println("Porcentagem de pessoas com idade entre 10 e 30 anos entre as\n" +
